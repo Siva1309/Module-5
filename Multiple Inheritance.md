@@ -4,42 +4,76 @@
 ---
 
 ### AIM  
-To write a Python program to get the name, attendance, and ID of a student and check if they are eligible for the next module using multiple inheritance. If attendance > 80, the student is eligible; otherwise, not eligible.
+To write a Python program using multiple inheritance to get a student’s name, attendance, and ID (grade), and determine if the student is eligible for placement based on their grade.
 
 ---
 
 ### ALGORITHM
 
-1. Define the `Student` class.
-2. Inside the `Student` class, define the `__init__` method (constructor). The `__init__` method accepts two parameters: `name` and `student_id`.
-    - Inside the `__init__` method: Assign the value of `name` to `self.name` and `student_id` to `self.student_id`.
-3. Define the `get_student_info` method inside the `Student` class:
-    - This method should return a string formatted with `self.name` and `self.student_id`.
-4. Define the `Attendance` class, which inherits from the `Student` class.
-5. Inside the `Attendance` class, define the `__init__` method (constructor).
-    - The `__init__` method accepts three parameters: `name`, `student_id`, and `attendance`.
-    - Inside the `__init__` method: Call the parent class constructor `super().__init__(name, student_id)` to initialize `name` and `student_id`. Assign the value of `attendance` to `self.attendance`.
-6. Define the `check_eligibility` method inside the `Attendance` class:
-    - If `self.attendance` is greater than 80, return a formatted string indicating the student is eligible for the module exam.
-    - Otherwise, return a formatted string indicating the student is not eligible for the module exam.
-7. Prompt the user to enter the `name` (as a string), `student_id` (as an integer), and `attendance` (as an integer).
-8. Create an instance `student` of the `Attendance` class, passing the entered `name`, `student_id`, and `attendance` to the constructor.
-9. Call the `check_eligibility` method on the `student` object and print the result.
-10. Terminate the program.
+Start the program.
+
+Define class A:
+
+In the constructor __init__(), accept input for:
+
+n: Student's name
+
+a: Student's attendance
+
+i: Student's ID (grade)
+
+Define class B inheriting from A:
+
+Define disp1() to print the name and attendance.
+
+Define class C inheriting from A:
+
+Define disp2() to check if grade (i) is greater than 90:
+
+If yes, print “Eligible for Placement”.
+
+Else, print “Not Eligible for Placement”.
+
+Define class D that inherits from both B and C (multiple inheritance).
+
+Create an object o of class D.
+
+Call disp1() to display name and attendance.
+
+Call disp2() to check placement eligibility.
+
+End the program.
 
 ---
 
 ### PROGRAM
 
 ```
-
+class A:
+    def __init__(self):
+        self.n=input()
+        self.a=int(input())
+        self.i=int(input())
+class B(A):
+    def disp1(self):
+        print(self.n)
+        print(self.a)
+class C(A):
+    def disp2(self):
+        if(self.i>90):
+            print("Eligible for Placement")
+        else:
+            print("Not Eligible for Placement")
+class D(B,C):
+    pass
+o=D()
+o.disp1()
+o.disp2()
 ```
 
 ### OUTPUT
+![Screenshot (245)](https://github.com/user-attachments/assets/aa77c616-3c5f-4e1d-9464-76763c4fd43b)
 
 
 ### RESULT
-
-
-
-
+Thus the python program was initiated and executed successfully.
