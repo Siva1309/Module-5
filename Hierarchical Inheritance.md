@@ -2,39 +2,81 @@
 ## Hierarchical Inheritance
 
 ---
-
 ### AIM  
-To write a Python program to get the employee and doctor details and display them using hierarchical inheritance. Create a parent (base) class named `Details` and two child (derived) classes named `Employee` and `Doctor`.
+To write a Python program that collects a person's name, age, and salary, and displays them using multilevel inheritance in object-oriented programming.
 
 ---
 
 ### ALGORITHM
 
-1. **Begin the program.**
-2. **Create a class Details** with an `__init__` method to initialize three attributes: `id`, `name`, and `gender`.
-3. **Define a method display_details()** to print the values of `id`, `name`, and `gender`.
-4. **Create a class Employee** that inherits from the `Details` class. 
-   - Add two additional attributes: `company` and `department`.
-   - Override the `display_details()` method to print the employee-specific attributes (`company` and `department`) along with the inherited details.
-5. **Create a class Doctor** that also inherits from the `Details` class. 
-   - Add two additional attributes: `hospital` and `department`.
-   - Override the `display_details()` method to print the doctor-specific attributes (`hospital` and `department`) along with the inherited details.
-6. **Accept input** for employee and doctor details.
-7. **Create objects of Employee and Doctor** using the input.
-8. **Call the `display_details()` method** for both objects to print the details.
-9. **Terminate the program.**
+Start the program.
+
+Define class a (base class):
+
+In the constructor __init__(), get input for:
+
+x → Name (string)
+
+a → Age (integer)
+
+b → Salary (integer)
+
+Define class b inheriting from a:
+
+Define dis1() to return name.
+
+Define class c inheriting from a:
+
+Define dis2() to return age.
+
+Define class d inheriting from a:
+
+Define dis3() to return salary.
+
+Define class e inheriting from b, c, and d:
+
+Use pass since it inherits everything needed.
+
+Create an object y of class e.
+
+Print the outputs from dis1(), dis2(), and dis3().
+
+End the program.
+
+
 
 ---
 
 ### PROGRAM
-```
-
 
 ```
+class a:
+    def __init__(self):
+        self.x=input()
+        self.a=int(input())
+        self.b=int(input())
+        
+class b(a):
+    def dis1(self):
+        return self.x
+    
+class c(a):
+    def dis2(self):
+        return self.a    
+class d(a):
+    def dis3(self):
+        return self.b
+        
+class e(b,c,d):
+    pass
 
-### OUTPUT  
+y=e()
+print(y.dis1() ,y.dis2() ,y.dis3())
 
-(Output Screenshot)  
+```
 
+### OUTPUT
+![Screenshot (246)](https://github.com/user-attachments/assets/1084666a-d809-4a21-b748-0d29c8ee1a06)
 
 ### RESULT
+Thus the python program was initiated and implemented successgully.
