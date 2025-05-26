@@ -1,10 +1,9 @@
-# Exp.No:23  
-## Multiple Inheritance
-
+# Exp.No:25  
+## PYTHON PROGRAM TO DISPLAY STUDENT DETAILS AND VALIDATE STUDENT ID
 ---
 
 ### AIM  
-To write a Python program using multiple inheritance to get a student’s name, attendance, and ID (grade), and determine if the student is eligible for placement based on their grade.
+To write a Python program to input student details such as student ID and name, display them using a tuple, and validate the student based on the ID.
 
 ---
 
@@ -12,68 +11,61 @@ To write a Python program using multiple inheritance to get a student’s name, 
 
 Start the program.
 
-Define class A:
+Define a class stu.
 
-In the constructor __init__(), accept input for:
+In the constructor __init__():
 
-n: Student's name
+Accept student ID (a) as integer input.
 
-a: Student's attendance
+Accept student name (b) as string input.
 
-i: Student's ID (grade)
+Define a method s1():
 
-Define class B inheriting from A:
+Return a tuple containing the student ID and name.
 
-Define disp1() to print the name and attendance.
+Define another method s2():
 
-Define class C inheriting from A:
+If student ID > 100000:
 
-Define disp2() to check if grade (i) is greater than 90:
+Return "Valid Student".
 
-If yes, print “Eligible for Placement”.
+Else:
 
-Else, print “Not Eligible for Placement”.
+Return "Invalid Student".
 
-Define class D that inherits from both B and C (multiple inheritance).
+Create an object x of class stu.
 
-Create an object o of class D.
-
-Call disp1() to display name and attendance.
-
-Call disp2() to check placement eligibility.
+Call s1() and s2() using the object and display both results using formatted output.
 
 End the program.
 
 ---
 
 ### PROGRAM
-
 ```
-class A:
+class stu:
     def __init__(self):
-        self.n=input()
-        self.a=int(input())
-        self.i=int(input())
-class B(A):
-    def disp1(self):
-        print(self.n)
-        print(self.a)
-class C(A):
-    def disp2(self):
-        if(self.i>90):
-            print("Eligible for Placement")
+        self.a = int(input())
+        self.b = input()
+        
+    def s1(self):
+        return tuple([self.a, self.b])
+        
+    def s2(self):
+        if self.a > 100000:
+            return "Valid Student"
         else:
-            print("Not Eligible for Placement")
-class D(B,C):
-    pass
-o=D()
-o.disp1()
-o.disp2()
+            return "Invalid Student"
+            
+x = stu()
+print("{}  {}".format(x.s1(), x.s2()))
+
+
 ```
 
-### OUTPUT
-![Screenshot (245)](https://github.com/user-attachments/assets/aa77c616-3c5f-4e1d-9464-76763c4fd43b)
+### OUTPUT  
+![Screenshot (247)](https://github.com/user-attachments/assets/7f5fe513-d003-4bc5-bf5b-2e0f037131b2)
 
 
 ### RESULT
-Thus the python program was initiated and executed successfully.
+Thus the python program was initiated and implemented successfully.
