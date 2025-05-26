@@ -1,48 +1,79 @@
-# Exp.No:24  
-## Multi-level Inheritance
+# Exp.No:23  
+## Multiple Inheritance
 
 ---
 
 ### AIM  
-To write a Python program to get the name, age, and ID of a person and display them using multilevel inheritance.
+To write a Python program using multiple inheritance to get a student’s name, attendance, and ID (grade), and determine if the student is eligible for placement based on their grade.
 
 ---
 
 ### ALGORITHM
 
-1. Define the `Person` class:
-   - Inside the `Person` class, define the `__init__` method (constructor) with two parameters: `name` and `age`.
-   - Inside the `__init__` method, assign the `name` to `self.name` and `age` to `self.age`.
+Start the program.
 
-2. Define the `PersonDetails` class that inherits from the `Person` class:
-   - Inside the `PersonDetails` class, define the `__init__` method (constructor) with three parameters: `name`, `age`, and `person_id`.
-   - Inside the `__init__` method, call the `__init__` method of the `Person` class using `super()` to initialize `name` and `age`.
-   - Assign `person_id` to `self.person_id`.
+Define class A:
 
-3. Define the `DisplayDetails` class that inherits from the `PersonDetails` class:
-   - Inside the `DisplayDetails` class, define the `__init__` method (constructor) with three parameters: `name`, `age`, and `person_id`.
-   - Inside the `__init__` method, call the `__init__` method of the `PersonDetails` class using `super()` to initialize `name`, `age`, and `person_id`.
+In the constructor __init__(), accept input for:
 
-4. Inside the `DisplayDetails` class, define the `show_details` method:
-   - Inside the `show_details` method, return a formatted string with `self.name`, `self.age`, and `self.person_id`.
+n: Student's name
 
-5. Prompt the user to enter `name` (string), `age` (integer), and `person_id` (integer).
+a: Student's attendance
 
-6. Create an instance `person` of the `DisplayDetails` class, passing `name`, `age`, and `person_id` to the constructor.
+i: Student's ID (grade)
 
-7. Call the `show_details` method on the `person` object and print the result.
+Define class B inheriting from A:
 
-8. Terminate the program.
+Define disp1() to print the name and attendance.
+
+Define class C inheriting from A:
+
+Define disp2() to check if grade (i) is greater than 90:
+
+If yes, print “Eligible for Placement”.
+
+Else, print “Not Eligible for Placement”.
+
+Define class D that inherits from both B and C (multiple inheritance).
+
+Create an object o of class D.
+
+Call disp1() to display name and attendance.
+
+Call disp2() to check placement eligibility.
+
+End the program.
 
 ---
 
 ### PROGRAM
 
 ```
-
-
+class A:
+    def __init__(self):
+        self.n=input()
+        self.a=int(input())
+        self.i=int(input())
+class B(A):
+    def disp1(self):
+        print(self.n)
+        print(self.a)
+class C(A):
+    def disp2(self):
+        if(self.i>90):
+            print("Eligible for Placement")
+        else:
+            print("Not Eligible for Placement")
+class D(B,C):
+    pass
+o=D()
+o.disp1()
+o.disp2()
 ```
 
 ### OUTPUT
+![Screenshot (245)](https://github.com/user-attachments/assets/aa77c616-3c5f-4e1d-9464-76763c4fd43b)
+
 
 ### RESULT
+Thus the python program was initiated and executed successfully.
